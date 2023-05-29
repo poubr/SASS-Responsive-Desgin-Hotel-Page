@@ -1,0 +1,76 @@
+@use "../../variables/colors";
+@use "../../variables/fonts";
+@use "../../variables/spacing";
+@use '../../mixins/_flex-display.scss' as flex-display;
+@use '../../mixins/_badges.scss' as badge;
+@use '../../mixins/_arrow.scss' as arrow;
+
+.testimonies-grid {
+    padding: spacing.$wide-padding;
+    margin-bottom: spacing.$margin-bottom;
+    display: grid;
+    min-height: 40rem;
+    gap: 30px;
+    & article {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: multiply;
+        border-radius: 20px;
+        @include flex-display.flex-display;
+        background-size: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+    @for $i from 1 through 2 {
+        $item: nth((item1, item2), $i);
+        & article:nth-child(#{$i}) {
+          position: relative;
+          cursor: pointer;
+          padding: spacing.$narrow-padding;
+        }
+    }
+    & article:nth-child(1) {
+        grid-column: span 3;
+        background-image: url("https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1570&q=80");
+        color: colors.$light-text;
+        & .badge {
+            @include badge.badge-style;
+            @include badge.badge-light;
+        }
+    }
+    & article:nth-child(2) {
+        grid-column: span 3;
+        background: linear-gradient(90deg, colors.$grid-item-cool-brown 0%, colors.$grid-item-greyish-teal 100%);
+        color: colors.$light-text;
+        & .badge {
+            @include badge.badge-style;
+            @include badge.badge-light;
+        }
+    }
+    & article:hover {
+        background-size: 110%;
+    }
+    & .testimonials__card__content {
+        margin-top: spacing.$margin-top;
+        margin-left: spacing.$margin-left;
+        & h3 {
+            font-family: fonts.$accent-font;
+            font-size: fonts.$h3-size;
+            & span {
+                position: relative;
+                & .arrow  {
+                    @include arrow.arrow;
+                }
+            }
+            &:hover {
+                & span > .arrow {
+                    visibility: visible;
+                }
+            } 
+        }
+        & p {
+            font-family: fonts.$main-font;
+            font-size: fonts.$p-size;
+        }
+    }
+}

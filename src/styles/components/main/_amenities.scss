@@ -1,0 +1,140 @@
+@use "../../variables/colors";
+@use "../../variables/fonts";
+@use "../../variables/spacing";
+@use '../../mixins/_flex-display.scss' as flex-display;
+@use '../../mixins/_badges.scss' as badge;
+@use '../../mixins/_arrow.scss' as arrow;
+@use '../../mixins/_buttons.scss' as buttons;
+
+.amenities-title {
+    text-align: center;
+    & h3 {
+        font-family: fonts.$accent-font;
+        font-size: fonts.$h3-size;
+        color: colors.$light-text;
+    }
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, minmax(auto, 1fr));
+    min-height: 40rem;
+    gap: 30px;
+    padding: spacing.$narrow-padding;
+    & article {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-blend-mode: multiply;
+        border-radius: 20px;
+        @include flex-display.flex-display;
+    }
+    @for $i from 1 through 5 {
+        $item: nth((item1, item2, item3, item4, item5), $i);
+        & article:nth-child(#{$i}) {
+          position: relative;
+          cursor: pointer;
+        }
+    }
+    & article:nth-child(1) {
+        grid-column: span 3;
+        position: relative;
+        background-image: url("https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1570&q=80");
+        color: colors.$light-text;
+        & .badge {
+            @include badge.badge-style;
+            @include badge.badge-light;
+        }
+    }
+    & article:nth-child(2) {
+        grid-column: span 3;
+        background-image: url("https://images.unsplash.com/photo-1524338198850-8a2ff63aaceb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80");
+        background-color: colors.$grid-item-dusty-rose;
+        color: colors.$light-text;
+        & .badge {
+            @include badge.badge-style;
+            @include badge.badge-light;
+        }
+    }
+    & article:nth-child(3) {
+        grid-column: span 2;
+        background-color: colors.$grid-item-greyish-teal;
+      color: colors.$light-text;
+        & .badge {
+            @include badge.badge-style;
+            @include badge.badge-light;
+        }
+    }
+    & article:nth-child(4) {
+        grid-column: span 2;
+        color: colors.$dark-text;
+        background-color: colors.$grid-item-brown-red;
+        & .badge {
+            @include badge.badge-style;
+            @include badge.badge-dark;
+        }
+    }
+    & article:nth-child(5) {
+        grid-column: span 2;
+        background-color: colors.$grid-item-dusty-rose;
+        color: colors.$dark-text;
+        
+        & .badge {
+            @include badge.badge-style;
+            @include badge.badge-dark;
+        }
+    }
+    & .amenities__card__content {
+        margin-top: spacing.$margin-top;
+        margin-left: spacing.$margin-left;
+        & h2 {
+            font-family: fonts.$accent-font;
+            font-size: fonts.$h2-size;
+        }
+        & h3 {
+            font-family: fonts.$accent-font;
+            font-size: fonts.$h3-size;
+            & span {
+                position: relative;
+                & .arrow  {
+                    @include arrow.arrow;
+                }
+            }
+            &:hover {
+                & span > .arrow {
+                    visibility: visible;
+                }
+            } 
+        }
+        & p {
+            font-family: fonts.$main-font;
+            font-size: fonts.$p-size;
+        }
+    }
+}
+.load-more-button {
+    padding: spacing.$narrow-padding;
+    margin-bottom: spacing.$margin-bottom;
+    & button {
+        @include buttons.button;
+        width: 100%;
+        background-color: colors.$button-color;
+        color: colors.$light-text;
+    }
+    & button:hover {
+        background-color: colors.$button-effect;
+    }
+}
+@media (max-width: 768px) {
+	.amenities-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, minmax(auto, 1fr));
+        grid-template-areas:
+        "item1"
+        "item2"
+        "item3"
+        "item4"
+        "item5";
+    }
+}

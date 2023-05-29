@@ -1,0 +1,11 @@
+@use 'mixins/_global-styles' as global-styles;
+@use "components/_header";
+@use 'components/main/_about-us';
+@use 'components/main/_testimonials';
+@use 'components/main/_amenities';
+@use 'components/main/_siderunner.scss';
+@use "components/_footer";
+
+body {
+  @include global-styles.global-styles;
+}

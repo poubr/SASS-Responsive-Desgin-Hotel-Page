@@ -1,0 +1,20 @@
+{
+  "name": "sass-responsive-desing-hotel-page",
+  "version": "1.0.0",
+  "description": "A mock hotel page. Responsive design made with SASS.",
+  "main": "index.js",
+  "scripts": {
+    "compile": "sass src/styles/style.scss:src/style.css",
+    "compile:watch": "sass --watch src/styles/style.scss:src/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poubr/SASS-responsive-hotel-page.git"
+  },
+  "author": "PO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poubr/SASS-responsive-hotel-page.git/issues"
+  },
+  "homepage": "po-projects.netlify.app/hotel"
+}

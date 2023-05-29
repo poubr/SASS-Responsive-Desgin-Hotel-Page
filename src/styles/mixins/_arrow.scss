@@ -1,0 +1,11 @@
+@use '../variables/_colors';
+
+@mixin arrow {
+    position: absolute;
+    top: 0.4rem;
+    right: -1rem;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0.5rem solid colors.$light-text;
+    visibility: hidden;
+}

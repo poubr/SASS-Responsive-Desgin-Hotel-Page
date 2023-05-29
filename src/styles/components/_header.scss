@@ -1,0 +1,44 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+@use '../mixins/_flex-display.scss' as flex-display;
+
+header {
+    padding: 1rem 5.5rem 0;
+    @include flex-display.flex-display;
+    & h1 a {
+        font-family: fonts.$logo-font;
+        font-size: fonts.$logo-size;
+        text-decoration: none;
+        color: colors.$light-text;
+    }
+    & nav {
+    @include flex-display.flex-display;
+        & ul {
+            list-style-type: none;
+            text-align: center;
+            @include flex-display.flex-display;
+            gap: 40px;
+            & li a {
+                text-decoration: none;
+                font-family: fonts.$accent-font;
+                font-size: fonts.$nav-link-size;
+                color: colors.$light-text;
+                position: relative;
+                &:hover::after {
+                    content: "";
+                    position: absolute;
+                    height: 0.2em;
+                    width: 0.2em;
+                    top: 4px;
+                    right: -7px;
+                    border-radius: 5px;
+                    background-color: colors.$link-accent;
+                }
+            }
+            & li .fa-search {
+                color: colors.$light-text;
+                font-size: fonts.$fav-icon-size;
+            }
+        }
+    }
+}

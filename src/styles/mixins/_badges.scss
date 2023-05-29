@@ -1,0 +1,22 @@
+@use '../variables/_colors';
+@use '../variables/_fonts';
+
+@mixin badge-style {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.2rem;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+}
+
+@mixin badge-light {
+    background-color: colors.$light-badge;
+    color: colors.$dark-badge;
+}
+
+@mixin badge-dark {
+    background-color: colors.$dark-badge;
+    color: colors.$light-badge;
+}

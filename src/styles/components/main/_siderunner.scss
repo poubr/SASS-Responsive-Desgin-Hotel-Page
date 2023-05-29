@@ -1,0 +1,20 @@
+@use "../../variables/colors";
+@use "../../variables/fonts";
+
+.siderunner-container {
+    position: fixed;
+    top: 50%;
+    left: 1%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    & h4 {
+        font-family: fonts.$accent-font;
+        font-size: fonts.$h4-size;
+        color: colors.$light-text;
+    } 
+}
+
+@media (max-width: 768px) {
+    .siderunner-container {
+        display: none;
+    }
+}

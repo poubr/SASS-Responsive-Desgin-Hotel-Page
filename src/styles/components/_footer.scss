@@ -1,0 +1,128 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+@use "../variables/spacing";
+@use '../mixins/_flex-display.scss' as flex-display;
+@use '../mixins/_buttons.scss' as buttons;
+
+.book-now-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: fit-content;
+    color: colors.$light-text;
+    text-align: center;
+    margin-bottom: spacing.$margin-bottom;
+    & h2 {
+        padding: spacing.$narrow-padding;
+        font-family: fonts.$main-font;
+        font-size: fonts.$h2-size-large;
+        margin: 0 auto;
+    }
+    & p {
+        font-family: fonts.$accent-font;
+        font-size: fonts.$p-size;
+        overflow: hidden;
+        border-right: .15rem solid colors.$light-text;
+        white-space: nowrap;
+        max-width: max-content;
+        margin: 0 auto;
+        animation: 
+          typing 6s steps(40),
+          blink-caret .75s step-end infinite;
+    }
+    & form {
+        padding: spacing.$narrow-padding;
+        @include flex-display.flex-display;
+        & input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid colors.$light-text;
+          width: 60%;
+          margin: 0 auto;
+          transition: width 1.5s linear;
+          text-align: center;
+            &:focus {
+                outline: none;
+                width: 80%;
+            }
+            &:focus::placeholder {
+                color: transparent;
+            }
+        }
+        & input::placeholder {
+            color: colors.$light-text;
+            font-family: fonts.$main-font;
+            font-size: fonts.$p-size;
+        }
+    }
+    & button {
+        @include buttons.button;
+        padding: 0 1rem 0 1rem;
+        background-color: colors.$grid-item-cool-brown;
+        color: colors.$light-text;
+        max-width: fit-content;
+        transition: all 0.3s ease-in-out;
+    }
+    & button:hover {
+        background-color: colors.$grid-item-brown-red;
+        transform: scale(1.1);
+    }
+}
+.footer-navigation__container {
+    @include flex-display.flex-display;
+    padding: 1rem 4rem 0;
+    & ul {
+        list-style-type: none;
+        text-align: center;
+        @include flex-display.flex-display;
+        gap: 40px;
+        & li a {
+            text-decoration: none;
+            font-family: fonts.$accent-font;
+            font-size: fonts.$nav-link-small-size;
+            color: colors.$light-text;
+            position: relative;
+            &:hover::after {
+                content: "";
+                position: absolute;
+                height: 0.2em;
+                width: 0.2em;
+                top: 4px;
+                right: -7px;
+                border-radius: 5px;
+                background-color: colors.$link-accent;
+            }
+        }
+        & li .fa {
+            color: colors.$light-text;
+            font-size: fonts.$fav-icon-small-size;
+        }
+    }
+}
+
+.copyright {
+    width: fit-content;
+    margin: 1% auto 0;
+    font-family: fonts.$main-font;
+    font-size: fonts.$nav-link-small-size;
+    color: colors.$light-text;
+}
+      
+@keyframes typing {
+    from { 
+        width: 0 
+    }
+    to { 
+        width: 100% 
+    }
+}
+      
+@keyframes blink-caret {     
+    0% { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: colors.$light-text; 
+    }
+}
+
