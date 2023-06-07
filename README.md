@@ -9,6 +9,7 @@ A mock hotel landing page created using SASS.
 ## Table of content
 
 - [Technologies](#technologies)
+- [Features](#features)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Credits](#credits)
@@ -18,6 +19,10 @@ A mock hotel landing page created using SASS.
 
 - HTML5
 - SASS
+
+## Features
+This project includes a SASS based responsive features, such as automatic resizing of elements, clickable hamburger menu, and the number of elements per row depending on screen size.
+The project also includes several animations, such as zooming in on background on hover, button changing colors, decorations next to texts, and typewriter effect.
 
 ## Structure
 ```

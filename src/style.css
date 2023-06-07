@@ -4,11 +4,17 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header h1 a {
+header .logo {
   font-family: "Great Vibes", cursive;
   font-size: 2.5rem;
   text-decoration: none;
   color: #e1efe6;
+}
+header .menu-icon {
+  display: none;
+}
+header input[type=checkbox] {
+  display: none;
 }
 header nav {
   display: flex;
@@ -43,6 +49,52 @@ header nav ul li a:hover::after {
 header nav ul li .fa-search {
   color: #e1efe6;
   font-size: 1.5rem;
+}
+@media (max-width: 1100px) {
+  header .logo {
+    font-size: 1.5rem;
+  }
+  header .menu {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 100;
+    background-color: #1a281f;
+  }
+  header .menu li {
+    margin-top: 20px;
+  }
+  header .menu-icon {
+    display: block;
+    margin-left: 10rem;
+  }
+  header .menu-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #e1efe6;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  header input[type=checkbox]:checked ~ nav > .menu {
+    display: flex;
+  }
+  header input[type=checkbox]:checked ~ .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+  header input[type=checkbox]:checked ~ .menu-icon span:nth-child(2) {
+    opacity: 0;
+  }
+  header input[type=checkbox]:checked ~ .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -5px);
+  }
 }
 
 .about-us-grid {

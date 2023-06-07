@@ -24,9 +24,9 @@
     @for $i from 1 through 2 {
         $item: nth((item1, item2), $i);
         & article:nth-child(#{$i}) {
-          position: relative;
-          cursor: pointer;
-          padding: spacing.$narrow-padding;
+            position: relative;
+            cursor: pointer;
+            padding: spacing.$narrow-padding;
         }
     }
     & article:nth-child(1) {
@@ -52,7 +52,7 @@
     }
     & .testimonials__card__content {
         margin-top: spacing.$margin-top;
-        margin-left: spacing.$margin-left;
+        margin-left: spacing.$margin-small;
         & h3 {
             font-family: fonts.$accent-font;
             font-size: fonts.$h3-size;

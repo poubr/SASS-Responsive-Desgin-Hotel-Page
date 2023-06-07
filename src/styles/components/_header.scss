@@ -1,18 +1,25 @@
 @use "../variables/colors";
 @use "../variables/fonts";
+@use "../variables/spacing";
 @use '../mixins/_flex-display.scss' as flex-display;
 
 header {
     padding: 1rem 5.5rem 0;
     @include flex-display.flex-display;
-    & h1 a {
+    & .logo {
         font-family: fonts.$logo-font;
         font-size: fonts.$logo-size;
         text-decoration: none;
         color: colors.$light-text;
     }
+    & .menu-icon {
+        display: none;
+    }
+    & input[type="checkbox"] {
+        display: none;
+    }
     & nav {
-    @include flex-display.flex-display;
+        @include flex-display.flex-display;
         & ul {
             list-style-type: none;
             text-align: center;
@@ -39,6 +46,52 @@ header {
                 color: colors.$light-text;
                 font-size: fonts.$fav-icon-size;
             }
+        }
+    }
+    @media (max-width: 1100px) {
+        & .logo {
+            font-size: fonts.$logo-size-mobile;
+        }
+        & .menu {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            z-index: 100;
+            background-color: colors.$background-color;
+            & li {
+                margin-top: 20px;
+            }
+        }
+        & .menu-icon {
+            display: block;
+            margin-left: 10rem;
+            & span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: colors.$light-text;
+                margin-bottom: 5px;
+                transition: all 0.3s ease-in-out;
+            }
+        } 
+        & input[type="checkbox"]:checked ~ nav > .menu {
+            display: flex;
+        }
+        & input[type="checkbox"]:checked ~ .menu-icon span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        & input[type="checkbox"]:checked ~ .menu-icon span:nth-child(2) {
+            opacity: 0;
+        }
+        & input[type="checkbox"]:checked ~ .menu-icon span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -5px);
         }
     }
 }

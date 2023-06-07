@@ -1,7 +1,7 @@
 {
-  "name": "sass-responsive-desing-hotel-page",
+  "name": "fs15_2-responsive-design",
   "version": "1.0.0",
-  "description": "A mock hotel page. Responsive design made with SASS.",
+  "description": "reponsive design with SASS",
   "main": "index.js",
   "scripts": {
     "compile": "sass src/styles/style.scss:src/style.css",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/poubr/SASS-responsive-hotel-page.git"
+    "url": "git+https://github.com/poubr/SASS-Responsive-Desgin-Hotel-Page.git"
   },
   "author": "PO",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/poubr/SASS-responsive-hotel-page.git/issues"
+    "url": "https://github.com/poubr/SASS-Responsive-Desgin-Hotel-Page.git/issues"
   },
-  "homepage": "po-projects.netlify.app/hotel"
+  "homepage": "https://github.com/poubr/SASS-Responsive-Desgin-Hotel-Page.git#readme"
 }

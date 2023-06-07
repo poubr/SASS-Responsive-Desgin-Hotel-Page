@@ -27,27 +27,27 @@
         max-width: max-content;
         margin: 0 auto;
         animation: 
-          typing 6s steps(40),
-          blink-caret .75s step-end infinite;
+            typing 6s steps(40),
+            blink-caret .75s step-end infinite;
     }
     & form {
         padding: spacing.$narrow-padding;
         @include flex-display.flex-display;
         & input {
-          background-color: transparent;
-          border: none;
-          border-bottom: 1px solid colors.$light-text;
-          width: 60%;
-          margin: 0 auto;
-          transition: width 1.5s linear;
-          text-align: center;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid colors.$light-text;
+            width: 60%;
+            margin: 0 auto;
+            transition: width 1.5s linear;
+            text-align: center;
             &:focus {
-                outline: none;
-                width: 80%;
-            }
-            &:focus::placeholder {
-                color: transparent;
-            }
+                    outline: none;
+                    width: 80%;
+                }
+                &:focus::placeholder {
+                    color: transparent;
+                }
         }
         & input::placeholder {
             color: colors.$light-text;
@@ -99,15 +99,13 @@
         }
     }
 }
-
 .copyright {
     width: fit-content;
     margin: 1% auto 0;
     font-family: fonts.$main-font;
     font-size: fonts.$nav-link-small-size;
     color: colors.$light-text;
-}
-      
+}   
 @keyframes typing {
     from { 
         width: 0 
@@ -115,8 +113,7 @@
     to { 
         width: 100% 
     }
-}
-      
+}      
 @keyframes blink-caret {     
     0% { 
         border-color: transparent 

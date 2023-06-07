@@ -33,8 +33,8 @@
     @for $i from 1 through 5 {
         $item: nth((item1, item2, item3, item4, item5), $i);
         & article:nth-child(#{$i}) {
-          position: relative;
-          cursor: pointer;
+            position: relative;
+            cursor: pointer;
         }
     }
     & article:nth-child(1) {
@@ -87,7 +87,7 @@
     }
     & .amenities__card__content {
         margin-top: spacing.$margin-top;
-        margin-left: spacing.$margin-left;
+        margin-left: spacing.$margin-small;
         & h2 {
             font-family: fonts.$accent-font;
             font-size: fonts.$h2-size;
